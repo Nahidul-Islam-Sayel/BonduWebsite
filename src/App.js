@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-
+import AcademyClass from "./Component/AcademyClass/AcademyClass";
+import MathBooks from "./Component/Books/MathBooks";
+import Footer from './Component/Footer/Footer';
+import Home from './Component/Home/Home';
+import Book from "./Component/MozarSateSikho/Book";
+import MozarSateSikho from './Component/MozarSateSikho/MozarSateSikho.jsx';
+import Nevbar from './Component/Nevbar/Nevbar';
+import ShohezeShikeBook from "./Component/ShohozeShikhe/ShohezeShikeBook";
+import ShohozeShike from "./Component/ShohozeShikhe/ShohozeShike";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+     <Nevbar/>
+    <Routes>
+     <Route path="/MozarSateSikho" element={<MozarSateSikho/> }/>
+     <Route path="/book" element={<Book/>}/>
+     <Route path="/oneMathBook" element={<MathBooks/>}/>
+     <Route path="/ShohozeShikhe" element={<ShohozeShike/>}/>
+     <Route path="/ShohozeShikheBook" element={<ShohezeShikeBook/>}/>
+     <Route path="/AcademyClass" element={<AcademyClass/> }/>
+    <Route path="/" element={<Home />} />
+
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
   );
 }
 
